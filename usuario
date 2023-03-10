@@ -1,0 +1,110 @@
+#include<stdio.h> 
+
+#include<stdlib.h> 
+
+#include<locale.h> 
+
+int main(){ 
+
+    float imposto_de_renda,aliquota;    // variável do tipo float   
+
+    setlocale(LC_ALL, "Portuguese");        //Permite a utilização de acentos e letras em português 
+
+    struct registro     // struct iniciada cuja função é armazenar dados para que seja realizado o cálculo do imposto de renda 
+
+    { 
+
+        char nome[50];      //variável do tipo caractere 
+
+        float salario;      // variável do tipo float 
+
+      
+
+         
+
+         
+
+    }; 
+
+    struct registro dados; 
+
+     
+
+     
+
+     
+
+    printf("************************DECLARAÇÃO DE IMPOSTO DE RENDA************************\n"); 
+
+    printf("Digite seu nome: "); 
+
+  fgets(dados.nome,50,stdin);     // armazena o nome 
+
+  printf("O nome armazenado foi: %s\n", dados.nome); 
+
+  printf("Digite seu salário: "); 
+
+  scanf_s("%f",&dados.salario);     // armazena o salario 
+
+  // if e else são utilizados para determinar o valor da alíquota, sendo que o valor da alíquota esta em  
+
+  //função com o valor do salário 
+
+  if(dados.salario<=1637.11){ 
+
+      aliquota = 0; 
+
+     } 
+
+    else if(dados.salario <= 2453.50){      //se a proposição anterior não estiver correta a próxima é verificada 
+
+                                            //e assim por diante .  
+
+        aliquota = 7.5; 
+
+    } 
+
+    else if(dados.salario<=3271.38){ 
+
+        aliquota = 15.0; 
+
+    } 
+
+    else if(dados.salario<=4087.65){ 
+
+        aliquota = 22.5; 
+
+    } 
+
+    else{ 
+
+        aliquota= 27.5; 
+
+    } 
+
+   
+
+  imposto_de_renda = dados.salario * (aliquota / 100);// Aqui é feito o cálculo do imposto de renda 
+
+   
+
+  printf("\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n"); 
+
+  printf("NOME: %s\n",dados.nome);        //imprime o nome na tela  
+
+  printf("IMPOSTO DE RENDA: R$%.2f\n",imposto_de_renda);        //imprime o imposto de renda na tela 
+
+  printf("\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n"); 
+
+   
+
+  system("pause"); 
+
+  return 0; 
+
+   
+
+  
+ 
+
+} 
